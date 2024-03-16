@@ -1,4 +1,3 @@
-import { BsHouse, BsBell } from 'react-icons/bs';
 import { FaRegUser } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
 
@@ -8,6 +7,7 @@ import SidebarPostButton from './SidebarPostButton';
 
 import useCurrentUser from '@/hooks/useCurrentUser';
 import { signOut } from 'next-auth/react';
+import { BiBell, BiHome, BiUser } from 'react-icons/bi';
 
 const Sidebar = () => {
     const { data: currentUser } = useCurrentUser();
@@ -15,18 +15,18 @@ const Sidebar = () => {
         {
             label: 'Home', 
             href: '/',
-            icon: BsHouse
+            icon: BiHome
         },
         {
             label: 'Notifications',
             href: '/notifications',
-            icon: BsBell,
+            icon: BiBell,
             auth: true
         },
         {
             label: 'You',
             href: `/users/${currentUser?.id}`,
-            icon: FaRegUser,
+            icon: BiUser,
             auth: true
         },
     ];
