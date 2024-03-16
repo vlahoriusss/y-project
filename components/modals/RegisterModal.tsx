@@ -5,8 +5,8 @@ import { signIn } from "next-auth/react";
 
 import { useCallback, useState } from "react";
 
-import Input from "../Input";
-import Modal from "../Modal";
+import Input from "@/components/Input";
+import Modal from "@";
 import { register } from "module";
 import axios from "axios";
 
