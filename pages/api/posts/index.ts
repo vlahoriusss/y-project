@@ -1,7 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
-
 import serverAuth from "@/libs/serverAuth";
 import prisma from "@/libs/prismadb";
+
+// Add the import statement for Next.js configuration
+import { config } from "next";
+
+// Add the configuration for responseLimit
+config({
+  api: {
+    responseLimit: false, // Disable response size limit
+  },
+});
 
 const DEFAULT_PAGE_SIZE = 15; 
 
@@ -65,4 +74,3 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(400).end();
   }
 }
-
