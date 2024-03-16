@@ -3,6 +3,8 @@ import { NextApiRequest, NextApiResponse } from "next";
 import serverAuth from "@/libs/serverAuth";
 import prisma from "@/libs/prismadb";
 
+const DEFAULT_PAGE_SIZE = 15; 
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST' && req.method !== 'GET') {
     return res.status(405).end();
@@ -64,8 +66,3 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 }
 
-export const config = {
-  api: {
-    responseLimit: false,
-  },
-}
