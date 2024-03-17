@@ -1,11 +1,19 @@
+@font-face {
+  font-family: 'Gesit Variable';
+  src: url('/public/GeistVariableVF.woff2') format('woff2'),
+       url('/public/GeistVariableVF.ttf') format('ttf');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  @apply h-full bg-stone-950
+  @apply h-full bg-stone-950;
 }
 
 body {
-  @apply h-full bg-stone-950
+  font-family: 'Gesit Variable', sans-serif;
+  
+  @apply h-full bg-stone-950;
 }
