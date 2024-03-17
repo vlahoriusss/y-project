@@ -54,7 +54,7 @@ const SidebarPostButton = () => {
                  text-black
                  text-[18px]
                 ">
-                    New
+                    Yap
                 </p>
             </div>
         </div>
