@@ -8,6 +8,10 @@ import SidebarPostButton from './SidebarPostButton';
 import useCurrentUser from '@/hooks/useCurrentUser';
 import { signOut } from 'next-auth/react';
 import { BiBell, BiHome, BiUser } from 'react-icons/bi';
+import { LuSparkle } from 'react-icons/lu';
+import { IoSearch } from 'react-icons/io5';
+import { RiNotificationLine } from 'react-icons/ri';
+import { GoHomeFill } from 'react-icons/go';
 
 const Sidebar = () => {
     const { data: currentUser } = useCurrentUser();
@@ -15,14 +19,25 @@ const Sidebar = () => {
         {
             label: 'Home', 
             href: '/',
-            icon: BiHome
+            icon: GoHomeFill
+        },
+        {
+            label: 'Search', 
+            href: '/',
+            icon: IoSearch
         },
         {
             label: 'Notifications',
             href: '/notifications',
-            icon: BiBell,
+            icon: RiNotificationLine,
             auth: true,
             alert: currentUser?.hasNotification,
+        },
+        {
+            label: 'Plus', 
+            href: '/',
+            icon: LuSparkle,
+            auth: true
         },
         {
             label: 'You',
