@@ -2,15 +2,22 @@ import useLoginModal from "@/hooks/useLoginModal";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { IoMdAdd } from "react-icons/io"
+import usePostModal from "@/hooks/usePostModal";
+import useCurrentUser from "@/hooks/useCurrentUser";
+
 
 const SidebarPostButton = () => {
-    const router =useRouter();
-    const LoginModal = useLoginModal();
+    const router = useRouter();
+    const loginModal = useLoginModal();
+    const { data: currentUser } = useCurrentUser();
+    const PostModal = usePostModal();
 
     const onClick = useCallback(() => {
-        LoginModal.onOpen();
-    }, [LoginModal]);
-
+        if (!currentUser) {
+          return loginModal.onOpen();
+        }
+        PostModal.onOpen();
+      }, [loginModal, router, currentUser]);
     return (
         <div onClick={onClick}>
             <div 

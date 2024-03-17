@@ -23,7 +23,7 @@ const Sidebar = () => {
         },
         {
             label: 'Search', 
-            href: '/',
+            href: '/search',
             icon: IoSearch
         },
         {

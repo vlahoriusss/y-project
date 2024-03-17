@@ -1,5 +1,6 @@
 import FollowBar from "./layout/FollowBar";
 import Sidebar from "./layout/Sidebar"
+import { GeistSans } from 'geist/font/sans';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -7,7 +8,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({children}) => {
     return (
-        <div className="h-screen bg-stone-950">
+        <div className="h-screen bg-stone-950 {GeistSans.className}">
             <div className="container h-full mx-auto xl:px-30 max-w-6xl">
                 <div className="grid grid-cols-4 h-full">
                     <Sidebar />
