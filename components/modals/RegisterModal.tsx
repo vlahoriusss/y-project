@@ -2,13 +2,12 @@ import useLoginModal from "@/hooks/useLoginModal";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import { toast } from "react-hot-toast";
 import { signIn } from "next-auth/react";
+import axios from "axios";
 
 import { useCallback, useState } from "react";
 
 import Input from "@/components/Input";
 import Modal from "@/components/Modal";
-import { register } from "module";
-import axios from "axios";
 
 const RegisterModal = () => {
     const LoginModal = useLoginModal();
@@ -32,6 +31,10 @@ const RegisterModal = () => {
     const onSubmit = useCallback(async () => {
         try {
             setIsLoading(true);
+            if (username.length > 15) {
+                toast.error('Username cannot have more than 15 characters');
+                return;
+            }
 
             await axios.post('/api/register', {
                 email,
