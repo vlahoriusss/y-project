@@ -58,7 +58,10 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
 
     const LikeIcon = hasLiked ? BiSolidLike : BiLike;
     const DislikeIcon = hasDisliked ? BiSolidDislike : BiDislike;
-    
+
+    const isPostBodyValid = useMemo(() => {
+        return data.body.length <= 200;
+    }, [data.body]);
 
     return (
         <div
@@ -105,7 +108,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                         </span>
                     </div>
                     <div className="text-white mt-1">
-                        {data.body}
+                        {isPostBodyValid ? data.body : `${data.body.slice(0, 200)}...`}
                     </div>
                     <div className="flex flex-row items-center mt-3 gap-10">
                         <div

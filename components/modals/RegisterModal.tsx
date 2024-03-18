@@ -36,6 +36,12 @@ const RegisterModal = () => {
                 return;
             }
 
+            if (name.length > 15) {
+                toast.error('Name cannot have more than 15 characters');
+                return;
+            }
+            
+
             await axios.post('/api/register', {
                 email,
                 password,
