@@ -29,10 +29,21 @@ const EditModal = () => {
     }, [currentUser])
 
     const [isLoading, setIsLoading] = useState(false);
+    
 
     const onSubmit = useCallback(async () => {
         try {
             setIsLoading(true);
+
+            if (username.length > 15) {
+                toast.error('Username cannot have more than 15 characters');
+                return;
+            }
+
+            if (name.length > 15) {
+                toast.error('Name cannot have more than 15 characters');
+                return;
+            }
 
             await axios.patch('/api/edit', {
                 name,

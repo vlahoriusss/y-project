@@ -9,6 +9,12 @@ import useDislike from "@/hooks/useDislike";
 import { BiSolidDislike, BiSolidLike } from "react-icons/bi";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModal from "@/hooks/useLoginModal";
+import PostItemDots from "../posts/PostItemMenu";
+import {
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
+  } from "@/components/ui/hover-card";
 
 interface PostItemProps {
     data: Record<string, any>;
