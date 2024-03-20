@@ -1,5 +1,5 @@
 import { FaRegUser } from 'react-icons/fa';
-import { FiLogOut } from 'react-icons/fi';
+import { FiBookmark, FiLogOut } from 'react-icons/fi';
 
 import SidebarItem from './SidebarItem';
 import SidebarLogo from './SidebarLogo';
@@ -8,7 +8,6 @@ import SidebarPostButton from './SidebarPostButton';
 import useCurrentUser from '@/hooks/useCurrentUser';
 import { signOut } from 'next-auth/react';
 import { BiBell, BiHome, BiUser } from 'react-icons/bi';
-import { LuSparkle } from 'react-icons/lu';
 import { IoSearch } from 'react-icons/io5';
 import { RiNotificationLine } from 'react-icons/ri';
 import { GoHomeFill } from 'react-icons/go';
@@ -34,9 +33,9 @@ const Sidebar = () => {
             alert: currentUser?.hasNotification,
         },
         {
-            label: 'Plus', 
-            href: '/',
-            icon: LuSparkle,
+            label: 'Saved', 
+            href: '/saved',
+            icon: FiBookmark,
             auth: true
         },
         {
