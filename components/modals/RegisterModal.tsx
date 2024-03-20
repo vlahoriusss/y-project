@@ -40,7 +40,13 @@ const RegisterModal = () => {
                 toast.error('Name cannot have more than 15 characters');
                 return;
             }
+
+            const invalidCharsRegex = /[^a-zA-Z0-9]/;
             
+            if (invalidCharsRegex.test(username)) {
+                toast.error('Username cannot contain spaces');
+                return;
+            }
 
             await axios.post('/api/register', {
                 email,

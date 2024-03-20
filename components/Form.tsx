@@ -86,7 +86,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                 transition"
             />
             <div className="flex items-center justify-between mt-4">
-              <div className="flex items-center text-white items-start gap-5">
+              <div className="flex items-center text-white items-start gap-5 ">
                 <FiImage size={22} />
                 <FiMic size={22} />
                 <RiEmojiStickerLine size={24} />

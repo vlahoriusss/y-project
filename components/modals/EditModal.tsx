@@ -45,6 +45,13 @@ const EditModal = () => {
                 return;
             }
 
+            const invalidCharsRegex = /[^a-zA-Z0-9]/;
+
+            if (invalidCharsRegex.test(username)) {
+                toast.error('Username cannot contain spaces');
+                return;
+            }
+
             await axios.patch('/api/edit', {
                 name,
                 username,
