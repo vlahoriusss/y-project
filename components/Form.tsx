@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useCallback, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { FiImage, FiMic } from 'react-icons/fi'; // Import FiImage from react-icons/fi
 
 import useLoginModal from '@/hooks/useLoginModal';
 import useRegisterModal from '@/hooks/useRegisterModal';
@@ -10,6 +11,7 @@ import usePost from '@/hooks/usePosts';
 
 import Avatar from './Avatar';
 import Button from './Button';
+import { RiEmojiStickerLine } from 'react-icons/ri';
 
 interface FormProps {
   placeholder: string;
@@ -50,11 +52,11 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
   return (
     <div className="border-b-[1px] border-neutral-800 px-5 py-2">
       {currentUser ? (
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row items-start gap-4">
           <div>
             <Avatar userId={currentUser?.id} />
           </div>
-          <div className="w-full">
+          <div className="flex flex-col w-full">
             <textarea
               disabled={isLoading}
               onChange={(event) => setBody(event.target.value)}
@@ -83,14 +85,19 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                 border-neutral-800 
                 transition"
             />
-            <div className="mt-4 flex flex-row justify-end">
+            <div className="flex items-center justify-between mt-4">
+              <div className="flex items-center text-white items-start gap-5">
+                <FiImage size={22} />
+                <FiMic size={22} />
+                <RiEmojiStickerLine size={24} />
+              </div>
               <Button disabled={isLoading || !body} onClick={onSubmit} label="New Yap" />
             </div>
           </div>
         </div>
       ) : (
         <div className="py-8">
-          <h1 className="text-white text-2xl text-center mb-4 font-bold">Welcome To Y Social!</h1>
+          <h1 className="text-white text-2xl text-center mb-4 font-bold">Join Y Social today</h1>
           <div className="flex flex-row items-center justify-center gap-4">
             <Button label="Login" onClick={loginModal.onOpen} />
             <Button label="Register" onClick={registerModal.onOpen} secondary />
