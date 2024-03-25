@@ -90,7 +90,6 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
             <div className="flex items-center justify-between mt-4">
               <div className="flex items-center text-white items-start gap-5 ">
                 <FiImage size={22} />
-                <FiMic size={22} />
                 <RiEmojiStickerLine size={24} />
               </div>
               <Button disabled={isLoading || !body} onClick={onSubmit} label="New Yap" />
