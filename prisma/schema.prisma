@@ -39,6 +39,7 @@ model Post {
   userId String @db.ObjectId
   likedIds String[] @db.ObjectId
   dislikedIds String[] @db.ObjectId
+  image String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 

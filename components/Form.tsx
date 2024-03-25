@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useCallback, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { FiImage, FiMic } from 'react-icons/fi'; // Import FiImage from react-icons/fi
+import { useDropzone } from 'react-dropzone';
+import Image from "next/image";
 
 import useLoginModal from '@/hooks/useLoginModal';
 import useRegisterModal from '@/hooks/useRegisterModal';

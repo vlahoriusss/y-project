@@ -118,36 +118,24 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                     </div>
                     <div className="flex flex-row items-center mt-3 gap-10">
                         <div
-                            className="
-                         flex
-                         flex-row
-                         items-center
-                         text-neutral-500
-                         gap-2
-                         cursor-pointer
-                         transition
-                         hover:text-white
-                        "
-                        >
-                            <LuMessageCircle size={20} />
-                            <p>
-                                {data.comments?.length || 0}
-                            </p>
-                        </div>
-                        <div
                             onClick={onLike}
                             className="
                          flex
                          flex-row
                          items-center
-                         text-neutral-500
+                         text-white
                          gap-2
                          cursor-pointer
                          transition
                          hover:text-red-500
+                         relative
                         "
                         >
-                            <LikeIcon size={20} color={hasLiked ? 'red' : ''} />
+                        <div className="relative">
+                            <div className="like-icon-circle h-10 w-10 flex items-center justify-center rounded-full  bg-gradient-to-br from-customGreen to-customGold">
+                            <LikeIcon size={20} color={hasLiked ? 'white' : ''} />
+                            </div>
+                            </div>
                             <p>
                                 {data.likedIds.length}
                             </p>
@@ -163,12 +151,39 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                          cursor-pointer
                          transition
                          hover:text-white
+                         relative
                         "
                         >
+                        <div className="relative">
+                            <div className="dislike-icon-circle h-10 w-10 flex items-center justify-center rounded-full bg-neutral-800">
                             <DislikeIcon size={20} />
+                        </div>
+                        </div>
                             <p>
                                 {data.dislikedIds?.length}
                             </p>
+                        </div>
+                        <div
+                            className="
+                         flex
+                         flex-row
+                         items-center
+                         gap-2
+                         cursor-pointer
+                         transition
+                         text-white
+                         relative
+                        "
+                        >
+                    <div className="relative">
+                      <div className="comment-icon-circle h-10 w-10 flex items-center justify-center rounded-full bg-neutral-800">
+                      <LuMessageCircle size={20} />
+                    </div>
+                    </div>
+                    <div className="ml-auto">
+                      {data.comments?.length || 0}
+                    </div>
+
                         </div>
                     </div>
                 </div>
