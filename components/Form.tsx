@@ -92,7 +92,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                 <FiImage size={22} />
                 <RiEmojiStickerLine size={24} />
               </div>
-              <Button disabled={isLoading || !body} onClick={onSubmit} label="New Yap" />
+              <Button disabled={isLoading || !body} onClick={onSubmit} label="Yap" />
             </div>
           </div>
         </div>
