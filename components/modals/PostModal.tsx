@@ -23,7 +23,7 @@ const PostModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={postModal.isOpen}
-      title="New Yap"
+      title="Yap"
       actionLabel="Cancel"
       onClose={postModal.onClose}
       onSubmit={postModal.onClose}
