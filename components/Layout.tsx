@@ -1,6 +1,8 @@
 import FollowBar from "./layout/FollowBar";
+import SupportBar from './layout/SupportBar'
 import Sidebar from "./layout/Sidebar"
 import { GeistSans } from 'geist/font/sans';
+
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -20,7 +22,10 @@ const Layout: React.FC<LayoutProps> = ({children}) => {
                         ">
                     {children}
                     </div>
+                    <div>
                     <FollowBar />
+                    <SupportBar />
+                    </div>
                 </div>
             </div>
         </div>
