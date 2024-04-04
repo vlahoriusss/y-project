@@ -34,8 +34,8 @@ const SupportBar = () => {
           </svg>Proxima Perks</h2>
         <h3 className="text-white text-lg font-regular">Support a small team working towards a better web.</h3>
         <h5 className="text-white text-sm  font-light">We’re Proxima − not big tech. Makers of Y Social and ProximaOS. If you want, you can donate, and get special perks in return − no pressure.</h5>
-        <Button secondary label="It's a deal." />
         <div className="flex flex-col gap-6 mt-4 "></div>
+        <Button secondary label="It's a deal." />
       </div>
     </div>
   );
