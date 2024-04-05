@@ -21,7 +21,7 @@ const SupportBar = () => {
   };
 
   return (
-    <div className="px-6 py hidden lg:block ">
+    <div className="px-6 py-4 hidden lg:block ">
       <div className="bg-neutral-900 rounded-xl p-4 border border-neutral-800">
        <svg
             xmlns="http://www.w3.org/2000/svg"
