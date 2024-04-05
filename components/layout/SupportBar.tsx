@@ -37,7 +37,7 @@ const SupportBar = () => {
   We’re Proxima − not big tech. <strong className="font-semibold">Makers of Y Social</strong> and <strong className="font-semibold">ProximaOS</strong>. If you want, you can donate, and get <strong className="font-semibold">special perks in return</strong> − no pressure.
 </h5>
         <div className="flex flex-col gap-6 mt-4 "></div>
-        <Button secondary label="It's a deal." /> 
+        <Button secondary label="It's a deal." onClick={() => {}} /> 
       </div>
     </div>
   );
