@@ -43,8 +43,8 @@ const ImageUpload: React.FC<DropzoneProps> = ({ onChange, label, value, disabled
         <div className="flex items-center justify-center">
           <Image
             src={base64}
-            height="100"
-            width="100"
+            height="1575"
+            width="1575"
             alt="Uploaded image"
           />
         </div>
