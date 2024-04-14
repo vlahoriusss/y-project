@@ -78,6 +78,7 @@ const EditModal = () => {
              disabled={isLoading}
              onChange={(image) => setProfileImage(image)}
              label="Upload Profile Image"
+             style={{ maxWidth: '100px', maxHeight: '100px' }} 
             />
             <ImageUpload 
              value={coverImage}
