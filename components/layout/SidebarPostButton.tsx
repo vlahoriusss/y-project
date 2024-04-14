@@ -35,6 +35,7 @@ const SidebarPostButton = () => {
         PostModal.onOpen();
     }, [loginModal, router, currentUser, PostModal]);
 
+
     return (
         <>
             {isVisible && (
