@@ -7,10 +7,11 @@ import SidebarPostButton from './SidebarPostButton';
 
 import useCurrentUser from '@/hooks/useCurrentUser';
 import { signOut } from 'next-auth/react';
-import { BiBell, BiHome, BiUser } from 'react-icons/bi';
+import { BiBell, BiHome, BiMessageSquareDetail, BiUser } from 'react-icons/bi';
 import { IoSearch } from 'react-icons/io5';
 import { RiNotificationLine } from 'react-icons/ri';
 import { GoHomeFill } from 'react-icons/go';
+
 
 const Sidebar = () => {
     const { data: currentUser } = useCurrentUser();
@@ -36,6 +37,12 @@ const Sidebar = () => {
             label: 'Saved', 
             href: '/saved',
             icon: FiBookmark,
+            auth: true
+        },
+        {
+            label: 'Messages', 
+            href: '/messages',
+            icon: BiMessageSquareDetail,
             auth: true
         },
         {
