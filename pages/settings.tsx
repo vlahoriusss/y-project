@@ -109,7 +109,7 @@ const SettingsPage = () => {
         </div>
         </div>
         <div>
-        <h3 className="text-sm font-semibold text-white mb-1">Blocker Yappers</h3>
+        <h3 className="text-sm font-semibold text-white mb-1">Blocked Yappers</h3>
         <p className="text-sm text-gray-400">Control who gets to interact with you.</p>
         </div>
       </div>
