@@ -14,7 +14,9 @@ import { GoHomeFill } from 'react-icons/go';
 
 const Sidebar = () => {
     const { data: currentUser } = useCurrentUser();
-    const items = [
+    
+    // Define items for mobile version (excluding "Saved")
+    const mobileItems = [
         {
             label: 'Home', 
             href: '/',
@@ -33,12 +35,6 @@ const Sidebar = () => {
             alert: currentUser?.hasNotification,
         },
         {
-            label: 'Saved', 
-            href: '/saved',
-            icon: FiBookmark,
-            auth: true
-        },
-        {
             label: 'Messages', 
             href: '/messages',
             icon: BiMessageSquareDetail,
@@ -52,11 +48,22 @@ const Sidebar = () => {
         },
     ];
 
+    // Define items for desktop version (including "Saved")
+    const desktopItems = [
+        ...mobileItems, // Include items from mobile version
+        {
+            label: 'Saved', 
+            href: '/saved',
+            icon: FiBookmark,
+            auth: true
+        }
+    ];
+
     return (
         <>
             {/* Mobile version */}
             <div className='fixed bottom-0 left-0 right-0 bg-neutral-900 z-10 flex justify-around py-2 px-4 md:hidden'>
-                {items.map((item) => (
+                {mobileItems.map((item) => (
                     <SidebarItem
                         key={item.href}
                         href={item.href}
@@ -74,7 +81,7 @@ const Sidebar = () => {
                     <div className='fixed space-y-2 lg:w-[230px]'>
                         <SidebarLogo />
                         <div className="bg-neutral-900 rounded-xl p-2 border border-neutral-800 ">
-                            {items.map((item) => (
+                            {desktopItems.map((item) => (
                                 <SidebarItem
                                     key={item.href}
                                     href={item.href}
