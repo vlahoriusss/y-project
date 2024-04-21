@@ -116,7 +116,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                     <div className="text-white mt-1">
                         {isPostBodyValid ? data.body : `${data.body.slice(0, 200)}...`}
                     </div>
-                    <div className="flex flex-row items-center mt-3 gap-4">
+                    <div className="flex flex-row items-center mt-3 gap-6">
                         <div
                             onClick={onLike}
                             className="
@@ -171,6 +171,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                                 <LuMessageCircle size={20} />
                             </div>
                             <div>{data.comments?.length || 0}</div>
+                            
                         </div>
                     </div>
                 </div>
