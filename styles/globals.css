@@ -1,12 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: 'Geist Variable';
+  src: url('GeistVariableVF.ttf') format('truetype');
+  }
+  @font-face {
+  font-family: 'Geist Variable';
+  src: url('GeistVariableVF.ttf') format('truetype');
+  font-style: normal;
+  },
+  
 
 :root {
+  font-family: 'Geist Variable', sans-serif;
   @apply h-full bg-stone-950;
 }
 
 body {  
+  font-family: 'Geist Variable', sans-serif;
   @apply h-full bg-stone-950;
 }
 
