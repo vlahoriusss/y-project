@@ -116,7 +116,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                             {createdAt}
                         </span>
                         <div className='ml-auto '>
-                          <PostItemDots data={data} />
+                          <PostItemDots data={data} userId={userId} />
                          </div>
                     </div>
                     <div className="text-white mt-1">

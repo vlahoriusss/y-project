@@ -13,7 +13,7 @@ import useFollow from "@/hooks/useFollow";
 
 interface PostItemProps {
     data: Record<string, any>;
-    userId: string;
+    userId?: string;
 }
 
 const PostItemDots: React.FC<PostItemProps> = ({ data = {}, userId }) => {
