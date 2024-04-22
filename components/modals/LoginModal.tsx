@@ -69,7 +69,7 @@ const LoginModal = () => {
               cursor-pointer
               hover:underline
              "
-            > Create an Account </span>
+            > Create a Proxima Account </span>
         </div>
     )
         
