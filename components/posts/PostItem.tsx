@@ -142,7 +142,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                          flex
                          flex-row
                          items-center
-                         text-neutral-500
+                         text-white
                          gap-2
                          cursor-pointer
                          transition
