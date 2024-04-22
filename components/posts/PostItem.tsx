@@ -21,6 +21,7 @@ interface PostItemProps {
     userId?: string;
 }
 
+
 const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
     const router = useRouter();
     const loginModal = useLoginModal();
@@ -69,6 +70,8 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
         return data.body.length <= 200;
     }, [data.body]);
 
+    
+
     return (
         <div
             onClick={goToPost}
@@ -113,7 +116,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                             {createdAt}
                         </span>
                         <div className='ml-auto '>
-                          <PostItemDots data={data} userId={userId} />
+                          <PostItemDots data={data} />
                          </div>
                     </div>
                     <div className="text-white mt-1">
