@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         customGreen: '#2F3732',
         customGold: '#323327',
+        customBg: "0D0D0D",
       },
       fontFamily: {
         primary:'Geist Variable'

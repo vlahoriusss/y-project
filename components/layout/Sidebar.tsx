@@ -9,8 +9,9 @@ import useCurrentUser from '@/hooks/useCurrentUser';
 import { signOut } from 'next-auth/react';
 import { BiBell, BiHome, BiMessageSquareDetail, BiUser } from 'react-icons/bi';
 import { IoSearch } from 'react-icons/io5';
-import { RiNotificationLine } from 'react-icons/ri';
+import { RiMoreFill, RiNotificationLine } from 'react-icons/ri';
 import { GoHomeFill } from 'react-icons/go';
+import Avatar from '../Avatar';
 
 const Sidebar = () => {
     const { data: currentUser } = useCurrentUser();
@@ -76,11 +77,11 @@ const Sidebar = () => {
             </div>
 
             {/* Desktop version */}
-            <div className='col-span-1 h-full pr-4 md:pr-6 hidden md:flex md:flex-col items-end'>
+            <div className='col-span-1 h-full pr-4 md:pr-2 hidden md:flex md:flex-col items-end'>
                 <div className='flex flex-col items-end '>
                     <div className='fixed space-y-2 lg:w-[230px]'>
-                        <SidebarLogo />
-                        <div className="bg-neutral-900 rounded-xl p-2 border border-neutral-800 ">
+                        <div className="bg-neutral-900 rounded-xl  mt-4 p-2 ">
+                            <SidebarLogo />
                             {desktopItems.map((item) => (
                                 <SidebarItem
                                     key={item.href}
@@ -91,12 +92,8 @@ const Sidebar = () => {
                                     alert={item.alert}
                                 />
                             ))}
-                            {/* Render logout icon only on desktop */}
-                            {currentUser && (
-                                <SidebarItem onClick={() => signOut()} icon={FiLogOut} label="Logout" />
-                            )}
-                            <SidebarPostButton />
                         </div>
+                        <SidebarPostButton />
                     </div>
                 </div>
             </div>

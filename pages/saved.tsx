@@ -30,7 +30,7 @@ const Saved = () => {
     };
 
     return (
-        <>
+<>
             <Header label="Saved" showBackArrow />
             <section className='mt-7'>
                 <div className="flex justify-center items-center h-full">
@@ -40,7 +40,7 @@ const Saved = () => {
                     </div>
                 </div>
             </section>
-        </>
+</>
     );
 };
 

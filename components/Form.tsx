@@ -11,6 +11,7 @@ import useCurrentUser from '@/hooks/useCurrentUser';
 import usePosts from '@/hooks/usePosts';
 import usePost from '@/hooks/usePosts';
 
+
 import Avatar from './Avatar';
 import Button from './Button';
 import { RiEmojiStickerLine } from 'react-icons/ri';
@@ -20,6 +21,7 @@ interface FormProps {
   isComment?: boolean;
   postId?: string;
 }
+
 
 const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
   const registerModal = useRegisterModal();
@@ -50,9 +52,10 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
       setIsLoading(false);
     }
   }, [body, mutatePosts, isComment, postId, mutatePost]);
+  
 
   return (
-    <div className="border-b-[1px] border-neutral-800 px-5 py-2">
+    <div className="px-5 py-2">
       {currentUser ? (
         <div className="flex flex-row items-start gap-4">
           <div>
@@ -60,21 +63,27 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
           </div>
           <div className="flex flex-col w-full">
             <textarea
+            rows={1}
               disabled={isLoading}
               onChange={(event) => setBody(event.target.value)}
               value={body}
               className="
-                disabled:opacity-80
-                peer
-                resize-none 
-                mt-3 
-                w-full 
-                bg-stone-950 
-                ring-0 
-                outline-none 
-                text-[20px] 
-                placeholder-neutral-500 
-                text-white
+              disabled:opacity-80
+              peer
+              resize-none 
+              mt-1
+              w-full 
+              bg-neutral-900
+              ring-0 
+              outline-none 
+              text-[20px] 
+              placeholder-neutral-500 
+              text-white
+              rounded-full
+              border
+              border-neutral-800
+              px-3
+              py-2
               "
               placeholder={placeholder}>
             </textarea>

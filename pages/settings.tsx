@@ -1,10 +1,14 @@
 import Header from "@/components/Header";
+import SidebarItem from "@/components/layout/SidebarItem";
+import useCurrentUser from "@/hooks/useCurrentUser";
 import useEditModal from "@/hooks/useEditModal";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { FaArrowRight } from "react-icons/fa";
-import { LuArrowUpRight, LuGlobe2, LuLock, LuSparkles } from "react-icons/lu";
+import { FiLogOut } from "react-icons/fi";
+import { LuArrowUpRight, LuGlobe2, LuLock, LuLogOut, LuSparkles } from "react-icons/lu";
 import { RiDiscordLine } from "react-icons/ri";
+
 
 const UserIcon = (
     <svg
@@ -82,6 +86,7 @@ const SettingsPage = () => {
   const { data: session } = useSession();
   const router = useRouter();
   const editModal = useEditModal();
+  const { data: currentUser } = useCurrentUser();
 
   return (
     <>
@@ -116,7 +121,7 @@ const SettingsPage = () => {
       <div className="border-b border-neutral-800"></div>
       </div>
       <div>
-      <div className="flex items-center px-6 py-4 cursor-pointer" >
+      <div className="flex items-center px-6 py-4 cursor-pointer" onClick={() => window.location.href = 'https://www.proxima.vercel.app/account'} >
       <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
           <div className="h-5 w-5 flex items-center justify-center ">
         {Proxima}
@@ -177,7 +182,7 @@ const SettingsPage = () => {
         {UserIcon}
         </div>
         </div>        <div>
-        <h3 className="text-sm font-semibold text-white mb-1">Manage potential “annoyances”</h3>
+        <h3 className="text-sm font-semibold text-white mb-1">Disable our personal promotions</h3>
         <p className="text-sm text-gray-400">Yap Notes, Store tab, Proxima Perks ads.</p>
         </div>
       </div>
@@ -195,8 +200,29 @@ const SettingsPage = () => {
         <LuArrowUpRight className="h-5 w-5 text-gray-500 ml-auto" />
       </div>
       </div>
+      <div className="border-b border-neutral-800"></div>
+<div>
+  <div 
+    className={`flex items-center px-6 py-4 cursor-pointer ${currentUser ? 'text-red-500' : ''}`} 
+  >
+    {currentUser && (
+      <SidebarItem onClick={() => signOut()} icon={FiLogOut} label="Logout" />
+    )}
+    <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
+      <div className="flex items-center justify-center">
+        <LuLogOut className="text-white h-5 w-5"/>
+      </div>
+    </div>
+    <div>
+      <h3 className="text-sm font-semibold text-white mb-1">Logout</h3>
+    </div>
+  </div>
+</div>
+
     </>
   );
 };
 
 export default SettingsPage;
+
+

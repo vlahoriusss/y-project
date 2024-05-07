@@ -6,7 +6,7 @@ const Search = () => {
 
 
   return (
-  <>
+    <>
       <Header label="Search" />
       <div className="px-6 py-2">
       <input type="text" className="bg-neutral-900 h-14 w-full px-12 rounded-full focus:outline-none hover:cursor-pointer"></input>

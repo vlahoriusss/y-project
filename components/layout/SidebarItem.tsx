@@ -65,7 +65,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
             lg:flex
             items-center
             gap-4
-            p-4
+            p-3
             rounded-full
             hover:bg-white-300
             hover:bg-opacity-10

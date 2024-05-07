@@ -70,14 +70,10 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
         return data.body.length <= 200;
     }, [data.body]);
 
-    
-
     return (
         <div
             onClick={goToPost}
             className="
-          border-b-[1px]
-          border-neutral-800
           p-5
           cursor-pointer
           hover:bg-neutral-900
@@ -122,7 +118,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                     <div className="text-white mt-1">
                         {isPostBodyValid ? data.body : `${data.body.slice(0, 200)}...`}
                     </div>
-                    <div className="flex flex-row items-center mt-3 gap-6">
+                    <div className="flex flex-row items-center mt-3 gap-8">
                         <div
                             onClick={onLike}
                             className="
@@ -187,3 +183,5 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
 }
 
 export default PostItem;
+
+

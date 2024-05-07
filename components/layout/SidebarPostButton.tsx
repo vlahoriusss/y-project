@@ -1,28 +1,29 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import useLoginModal from "@/hooks/useLoginModal";
 import { useRouter } from "next/router";
-import { useCallback } from "react";
 import { IoMdAdd } from "react-icons/io";
 import usePostModal from "@/hooks/usePostModal";
 import useCurrentUser from "@/hooks/useCurrentUser";
+import { motion } from "framer-motion"; // Import motion
 
 const SidebarPostButton = () => {
     const router = useRouter();
     const loginModal = useLoginModal();
     const { data: currentUser } = useCurrentUser();
     const PostModal = usePostModal();
-    const [isVisible, setIsVisible] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     const handleScroll = useCallback(() => {
-        if (window.scrollY > 100) { 
-            setIsVisible(true);
+        if (window.scrollY > 0) {
+            setScrolled(true);
         } else {
-            setIsVisible(false);
+            setScrolled(false);
         }
     }, []);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -30,62 +31,58 @@ const SidebarPostButton = () => {
 
     const onClick = useCallback(() => {
         if (!currentUser) {
-            return loginModal.onOpen();
+            loginModal.onOpen();
+        } else {
+            PostModal.onOpen();
         }
-        PostModal.onOpen();
-    }, [loginModal, router, currentUser, PostModal]);
-
+    }, [loginModal, PostModal, currentUser]);
 
     return (
         <>
-            {isVisible && (
-                <div onClick={onClick}>
-                    <div
-                        className="
-                        mt-6
-                        lg:hidden
-                        rounded-full
-                        h-14
-                        w-14
-                        p-4
-                        flex
-                        items-center
-                        justify-center
-                        bg-white
-                        hover:bg-opacity-80
-                        transition
-                        cursor-pointer
-                        "
-                    >
-                        <IoMdAdd size={24} color="black" />
-                    </div>
-                    <div
-                        className="
-                        mt-6
-                        hidden
-                        lg:block
-                        px-4
-                        py-2
-                        rounded-full
-                        bg-white
-                        hover:bg-opacity-90
-                        cursor-pointer
-                        transition
-                        "
-                    >
-                        <p className="
-                        hidden
-                        lg:block
-                        text-center
-                        font-semibold
-                        text-black
-                        text-[18px]
-                        ">
-                            Yap
-                        </p>
-                    </div>
-                </div>
-            )}
+            <div
+                className={`
+                    mt-2
+                    lg:hidden
+                    rounded-full
+                    h-14
+                    w-14
+                    p-2
+                    flex
+                    items-center
+                    justify-center
+                    ${scrolled ? 'bg-white text-black' : 'bg-neutral-900 text-white'} 
+                    hover:bg-opacity-80
+                    transition-colors duration-300
+                    cursor-pointer
+                `}
+                onClick={onClick}
+            >
+                <IoMdAdd size={24} color="black" />
+            </div>
+            <div
+                className={`
+                    mt-2
+                    hidden
+                    lg:block
+                    px-4
+                    py-3
+                    rounded-full
+                    ${scrolled ? 'bg-white text-black' : 'bg-neutral-900 text-white'}
+                    hover:bg-opacity-90
+                    transition-colors duration-300
+                    cursor-pointer
+                `}
+                onClick={onClick}
+            >
+                <p className="
+                    hidden
+                    lg:block
+                    text-center
+                    text-[18px]
+                ">
+                    New Yap
+                </p>
+            </div>
         </>
     );
 };
