@@ -41,8 +41,8 @@ const Tick = (
 
 );
 
-const FeatureItem = ({ icon, text }) => {
-  return (
+const FeatureItem = ({ icon, text }: { icon: string, text: string }) => {  return (
+  
       <div className="flex items-center ">
           <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
               <div className="h-5 w-5 flex items-center justify-center">
