@@ -7,9 +7,19 @@
   }
   @font-face {
   font-family: 'Geist Variable';
-  src: url('GeistVariableVF.ttf') format('truetype');
+  src: url('GeistVariableVF.ttf') format('opentype');
   font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   },
+  @font-face {
+    font-family: 'Agrandir';
+    src: url(Agrandir-Regular.otf) format('truetype');
+  },
+  @font-face {
+    font-family: 'yicons';
+    src: url('yicons.ttf');
+  }
   
 
 :root {
@@ -21,4 +31,7 @@ body {
   font-family: 'Geist Variable', sans-serif;
   @apply h-full bg-stone-950;
 }
+
+
+
 

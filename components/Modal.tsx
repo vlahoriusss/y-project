@@ -57,8 +57,7 @@ const Modal: React.FC<ModalProps> = ({
          z-50
          outline-none
          focus:outline-none
-         bg-neutral-800
-         bg-opacity-70
+         drop-shadow-lg
          "
         >
             <div
@@ -79,15 +78,16 @@ const Modal: React.FC<ModalProps> = ({
                  h-full
                  lg:h-auto
                  border-0
-                 rounded-lg
+                 rounded-xl
                  shadow-1g
                  realtive
                  flex
                  flex-col
                  w-full
-                 bg-stone-950
+                 bg-neutral-900
                  outline-none
                  focus:outline-none
+                 
                  "
                 >
                     {/* Header */}

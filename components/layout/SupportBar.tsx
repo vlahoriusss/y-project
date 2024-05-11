@@ -66,7 +66,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ icon, text }) => {  return (
 
   return (
     <div className="px-2 py-4 hidden lg:block ">
-      <div className="bg-neutral-900 rounded-xl p-4 border border-neutral-800">
+      <div className="bg-neutral-900 rounded-xl p-4">
        <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 24"

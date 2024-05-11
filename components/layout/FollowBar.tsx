@@ -19,8 +19,8 @@ const FollowBar = () => {
 
     return (
         <div className="px-2 hidden lg:block">
-            <div className="bg-neutral-900 rounded-xl p-4 border border-neutral-800">
-                <h2 className="text-white text-xl font-semibold">People</h2>
+            <div className="bg-neutral-900 rounded-xl p-4">
+                <h2 className="text-white text-xl  font-agrandir">People</h2>
                 <div className="flex flex-col gap-6 mt-4">
                     {displayedUsers.map((user: Record<string, any>) => (
                         <div key={user.id} className="flex flex-row gap-4">

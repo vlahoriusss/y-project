@@ -27,7 +27,7 @@ const PostModal = () => {
       actionLabel="Cancel"
       onClose={postModal.onClose}
       onSubmit={postModal.onClose}
-      body={<Form placeholder="Y not Yap?" />}
+      body={<Form placeholder="Start Yapping" />}
     />
   );
 };

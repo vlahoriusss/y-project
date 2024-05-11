@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
     <Header label="Home" />
-    <Form placeholder="Y not Yap?" />
+    <Form placeholder="Start Yapping" />
     <PostFeed />
     </>
   )

@@ -13,7 +13,8 @@ module.exports = {
         customBg: "0D0D0D",
       },
       fontFamily: {
-        primary:'Geist Variable'
+        primary:'Geist Variable',
+        'agrandir': ['Agrandir'],
       },
 
     },

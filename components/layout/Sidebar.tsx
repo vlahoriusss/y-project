@@ -12,6 +12,12 @@ import { IoSearch } from 'react-icons/io5';
 import { RiMoreFill, RiNotificationLine } from 'react-icons/ri';
 import { GoHomeFill } from 'react-icons/go';
 import Avatar from '../Avatar';
+import Home from '@/fonts/home';
+import Search from '@/fonts/search';
+import Notification from '@/fonts/notification';
+import Messages from '@/fonts/messages';
+import Saved from '@/fonts/saved';
+
 
 const Sidebar = () => {
     const { data: currentUser } = useCurrentUser();
@@ -21,24 +27,24 @@ const Sidebar = () => {
         {
             label: 'Home', 
             href: '/',
-            icon: GoHomeFill
+            icon: Home
         },
         {
             label: 'Search', 
             href: '/search',
-            icon: IoSearch
+            icon: Search
         },
         {
             label: 'Notifications',
             href: '/notifications',
-            icon: RiNotificationLine,
+            icon: Notification,
             auth: true,
             alert: currentUser?.hasNotification,
         },
         {
             label: 'Messages', 
             href: '/messages',
-            icon: BiMessageSquareDetail,
+            icon: Messages,
             auth: true
         },
         {
@@ -55,7 +61,7 @@ const Sidebar = () => {
         {
             label: 'Saved', 
             href: '/saved',
-            icon: FiBookmark,
+            icon: Saved,
             auth: true
         }
     ];
@@ -78,9 +84,9 @@ const Sidebar = () => {
 
             {/* Desktop version */}
             <div className='col-span-1 h-full pr-4 md:pr-2 hidden md:flex md:flex-col items-end'>
-                <div className='flex flex-col items-end '>
+                <div className='flex flex-col items-end'>
                     <div className='fixed space-y-2 lg:w-[230px]'>
-                        <div className="bg-neutral-900 rounded-xl  mt-4 p-2 ">
+                        <div className="flex flex-col bg-neutral-900 rounded-xl  mt-4 p-2 ">
                             <SidebarLogo />
                             {desktopItems.map((item) => (
                                 <SidebarItem

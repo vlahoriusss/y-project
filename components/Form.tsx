@@ -96,11 +96,11 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                 border-neutral-800 
                 transition"
             />
-            <div className="flex items-center justify-between mt-4">
-              <div className="flex items-center text-white items-start gap-5 ">
-                <FiImage size={22} />
-                <RiEmojiStickerLine size={24} />
-              </div>
+            <div className="flex items-center justify-between mt-3">
+            <button className="flex items-center rounded-full text-white gap-1.5 bg-neutral-800 px-2 py-1.5 transition hover:bg-neutral-600 focus:outline-none">
+        <FiImage size={17} />
+        <p className='text-sm'>Add image</p>
+    </button>
               <Button disabled={isLoading || !body} onClick={onSubmit} label="Yap" />
             </div>
           </div>

@@ -34,6 +34,18 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
         router.push("/settings");
     };
 
+    const Cal = (
+        <svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1.63177V15.1318V15.1318C1 15.9602 1.67157 16.6318 2.5 16.6318H18C18.8284 16.6318 19.5 15.9602 19.5 15.1318V15.1318V6.74536C19.5 4.10174 17.9597 0.531535 15.5 1.50049V1.50049C13.2898 2.37116 12.9481 3.76306 14.5 6.63177C16.0519 9.50049 22.5 7.63177 22.5 7.63177" stroke="white" stroke-width="1.5"/>
+<circle cx="5" cy="7.36914" r="1" fill="white"/>
+<circle cx="10" cy="7.36914" r="1" fill="white"/>
+<circle cx="5" cy="12.3691" r="1" fill="white"/>
+<circle cx="10" cy="12.3691" r="1" fill="white"/>
+<circle cx="15" cy="12.3691" r="1" fill="white"/>
+</svg>
+
+    );
+
     return (
         <div className="border-b-[1px] border-neutral-800 pb-4">
          <div className="flex justify-end p-2">
@@ -51,10 +63,10 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
          </div>
          <div className="mt-8 px-4">
             <div className="flex flex-col">
-                <p className="text-white text-2xl font-semibold">
+                <p className="text-white text-2xl font-agrandir">
                     {fetchedUser?.name}
                 </p>
-                <p className="text-md text-neutral-500">
+                <p className="text-md text-neutral-500 font-agrandir">
                     @{fetchedUser?.username}
                 </p>
             </div>
@@ -68,11 +80,11 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
                   flex-row
                   items-center
                   gap-2
-                  mt-4
-                  text-neutral-500
+                  mt-2
+                  text-white
                  "
                 >
-                    <LuCalendar size={24} />
+                    {Cal}
                     <p>
                         Joined {createdAt}
                     </p>
@@ -80,18 +92,18 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
              </div>
              <div className="flex flex-row items-center mt-4 gap-6">
                 <div className="flex flex-row items-center gap-1">
-                    <p className="text-white">
+                    <p className="text-white font-bold">
                         {fetchedUser?.followingIds?.length}
                     </p>
-                    <p className="text-neutral-500">
+                    <p className="text-white">
                         Following
                     </p>
                 </div>
                 <div className="flex flex-row items-center gap-1">
-                    <p className="text-white">
+                    <p className="text-white font-bold">
                         {fetchedUser?.followersCount || 0}
                     </p>
-                    <p className="text-neutral-500">
+                    <p className="text-white">
                         Followers
                     </p>
                 </div>

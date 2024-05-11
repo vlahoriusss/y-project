@@ -74,10 +74,11 @@ const Privacy = (
  </svg>
  );
 
- const Globe = (
- <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
- <path d="M8.70399 16.9941C6.77882 16.5525 9.6099 12.7361 6.5 12.0002C3.3901 11.2643 5.29791 6.39687 7.22309 5.95533C9.14826 5.51378 13.5 4.50018 13 7.00018C12.3857 10.0716 8.64627 8.05301 6.76833 6.82064C6.1275 6.40011 5.81261 5.61487 6.06294 4.89041C7.09649 1.89925 9.4109 0.967391 10.333 1.0983C13.7391 1.58184 16.8786 4.83677 16.9971 9.19337C17.1051 13.1655 14.2191 15.5716 11.5 16.5257M8.70399 16.9941C5.74218 16.8469 0.855199 13.4617 1.00329 9.19337M8.70399 16.9941C9.50545 17.0339 10.4912 16.8797 11.5 16.5257M12 12.0002C10.8 14.0002 11.1667 15.8506 11.5 16.5257" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
- </svg>
+ const Interface = (
+  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M14 14H1.72357C1.54313 14 1.48563 13.7568 1.64697 13.676V13.676C1.67075 13.6641 1.69697 13.6579 1.72357 13.6579H8.66509C8.92488 13.6579 9.13548 13.4473 9.13548 13.1875V13.1875V7.33761C9.13548 6.43436 8.40325 5.70213 7.5 5.70213V5.70213C6.59675 5.70213 5.86452 6.43436 5.86452 7.33761V7.82269C5.86452 8.99385 6.81393 9.94326 7.98508 9.94326H11C12.6569 9.94326 14 8.60012 14 6.94326V4C14 2.34315 12.6569 1 11 1H4C2.34315 1 1 2.34315 1 4V7.75C1 9.40685 2.34315 10.75 4 10.75H4.68587" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  
  )
 
 
@@ -92,23 +93,23 @@ const SettingsPage = () => {
     <>
       <Header label="Settings" showBackArrow />
       <div className="px-6 py-2">
-        <h2 className="text-xl font-regular mb-4 text-white">You’re in control of your Y experience.</h2>
+        <h2 className="text-xl font-regular mb-4 text-white font-agrandir">You’re in control of your Y experience.</h2>
       </div>
       <div className="flex items-center px-6 py-4 cursor-pointer" onClick={editModal.onOpen} >
-      <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
+      <div className="h-7 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
           <div className="h-5 w-5 flex items-center justify-center ">
         {UserIcon}
         </div>
         </div>
         <div>
         <h3 className="text-sm font-semibold text-white mb-1">Profile Details</h3>
-        <p className="text-sm text-gray-400">Stuff like your description, password, and username.</p>
+        <p className="text-sm text-gray-400">Stuff like your profile photo and description.</p>
         </div>
         <FaArrowRight className="h-3.5 w-3.5 text-gray-500 ml-auto" />
       </div>
       <div>
-      <div className="flex items-center px-6 py-4 cursor-pointer" >
-      <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
+      <div className="flex items-center px-6 py-2 cursor-pointer" >
+      <div className="h-7 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
           <div className="h-5 w-5 flex items-center justify-center ">
         {UserBlock}
         </div>
@@ -122,7 +123,7 @@ const SettingsPage = () => {
       </div>
       <div>
       <div className="flex items-center px-6 py-4 cursor-pointer" onClick={() => window.location.href = 'https://www.proxima.vercel.app/account'} >
-      <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
+      <div className="h-7 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
           <div className="h-5 w-5 flex items-center justify-center ">
         {Proxima}
         </div>
@@ -132,74 +133,35 @@ const SettingsPage = () => {
         </div>
         <LuArrowUpRight className="h-5 w-5 text-gray-500 ml-auto" />
       </div>
-      </div>
       <div className="border-b border-neutral-800"></div>
-      <div>
-      <div className="flex items-center px-6 py-4 cursor-pointer" >
-      <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
-          <div className="h-6 w-6 flex items-center justify-center ">
-        {Privacy}
-        </div>
-        </div>
-        <div>
-        <h3 className="text-sm font-semibold text-white mb-1">Privacy and policies</h3>
-        <p className="text-sm text-gray-400">Review your privacy with Y, as well as our policies.</p>
-        </div>
-        <FaArrowRight className="h-3.5 w-3.5 text-gray-500 ml-auto" />
-      </div>
       </div>
       <div>
       <div className="flex items-center px-6 py-4 cursor-pointer" >
-      <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
+      <div className="h-7 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
           <div className="h-6 w-6 flex items-center justify-center ">
         {Security}
         </div>
         </div>        <div>
-        <h3 className="text-sm font-semibold text-white mb-1">Security</h3>
-        <p className="text-sm text-gray-400">Devices, 2FA and account access.</p>
+        <h3 className="text-sm font-semibold text-white mb-1">Proxima Account Security</h3>
+        <p className="text-sm text-gray-400">Password and account access.</p>
         </div>
       </div>
       </div>
       <div className="border-b border-neutral-800"></div>
       <div>
       <div className="flex items-center px-6 py-4 cursor-pointer" >
-      <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
+      <div className="h-7 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
           <div className="h-6 w-6 flex items-center justify-center ">
-        {Globe}
+        {Interface}
         </div>
         </div>        <div>
-        <h3 className="text-sm font-semibold text-white mb-1">Language and accessibility</h3>
-        <p className="text-sm text-gray-400">Customize Y Social’s interface.</p>
+        <h3 className="text-sm font-semibold text-white mb-1">Interface</h3>
+        <p className="text-sm text-gray-400">Language. theme and accessibility.</p>
         </div>
         <FaArrowRight className="h-3.5 w-3.5 text-gray-500 ml-auto" />
       </div>
       </div>
-      <div className="border-b border-neutral-800"></div>
-      <div>
-      <div className="flex items-center px-6 py-4 cursor-pointer" >
-      <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
-          <div className="h-6 w-6 flex items-center justify-center ">
-        {UserIcon}
-        </div>
-        </div>        <div>
-        <h3 className="text-sm font-semibold text-white mb-1">Disable our personal promotions</h3>
-        <p className="text-sm text-gray-400">Yap Notes, Store tab, Proxima Perks ads.</p>
-        </div>
-      </div>
-      </div>
-      <div className="border-b border-neutral-800"></div>
-      <div>
-      <div className="flex items-center px-6 py-4 cursor-pointer" >
-      <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
-          <div className=" flex items-center justify-center ">
-        <RiDiscordLine className="text-white h-5 w-5"/>
-        </div>
-        </div>        <div>
-        <h3 className="text-sm font-semibold text-white mb-1">Contact us on Discord</h3>
-        </div>
-        <LuArrowUpRight className="h-5 w-5 text-gray-500 ml-auto" />
-      </div>
-      </div>
+    
       <div className="border-b border-neutral-800"></div>
 <div>
   <div 
@@ -208,7 +170,7 @@ const SettingsPage = () => {
     {currentUser && (
       <SidebarItem onClick={() => signOut()} icon={FiLogOut} label="Logout" />
     )}
-    <div className="h-10 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
+    <div className="h-7 w-10 mr-3 flex items-center justify-center rounded-full bg-neutral-800">
       <div className="flex items-center justify-center">
         <LuLogOut className="text-white h-5 w-5"/>
       </div>

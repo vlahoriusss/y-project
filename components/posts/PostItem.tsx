@@ -78,10 +78,12 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
           cursor-pointer
           hover:bg-neutral-900
           transition
+          border-b border-neutral-800
          "
         >
             <div className="flex flex-row items-start gap-3 ">
                 <Avatar userId={data.user.id} />
+                
                 <div>
                     <div
                         className="
@@ -129,11 +131,11 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                          gap-2
                          cursor-pointer
                          transition
-                         hover:text-red-500
+                         hover:text-neutral-400
                          relative
                         "
                         >
-                            <div className="like-icon-circle h-10 w-10 flex items-center justify-center rounded-full  bg-gradient-to-br from-customGreen to-customGold">
+                            <div className="like-icon-circle h-7 w-10 flex items-center justify-center rounded-full  bg-gradient-to-br from-customGreen to-customGold">
                                 <LikeIcon size={20} color={hasLiked ? 'white' : ''} />
                             </div>
                             <p>{data.likedIds.length}</p>
@@ -148,11 +150,11 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                          gap-2
                          cursor-pointer
                          transition
-                         hover:text-white
+                         hover:text-neutral-400
                          relative
                         "
                         >
-                            <div className="dislike-icon-circle h-10 w-10 flex items-center justify-center rounded-full bg-neutral-800">
+                            <div className="dislike-icon-circle h-7 w-10 flex items-center justify-center rounded-full bg-neutral-800">
                                 <DislikeIcon size={20} />
                             </div>
                             <p>{data.dislikedIds?.length}</p>
@@ -162,14 +164,15 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                          flex
                          flex-row
                          items-center
+                         text-white
                          gap-2
                          cursor-pointer
                          transition
-                         text-white
+                         hover:text-neutral-400
                          relative
                         "
                         >
-                            <div className="comment-icon-circle h-10 w-10 flex items-center justify-center rounded-full bg-neutral-800">
+                            <div className="comment-icon-circle h-7 w-10 flex items-center justify-center rounded-full bg-neutral-800">
                                 <LuMessageCircle size={20} />
                             </div>
                             <div>{data.comments?.length || 0}</div>
