@@ -1,16 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
-
 import serverAuth from "@/libs/serverAuth";
 import prisma from "@/libs/prismadb";
 
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST' && req.method !== 'GET') {
-    return res.status(405).end();
-  }
-
   try {
-    
     if (req.method === 'POST') {
       const { currentUser } = await serverAuth(req, res);
       const { body } = req.body;
@@ -27,8 +20,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (req.method === 'GET') {
       const { userId } = req.query;
-
-      console.log({ userId })
 
       let posts;
 
@@ -59,9 +50,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       return res.status(200).json(posts);
     }
+
+    return res.status(405).end(); // Method not allowed
   } catch (error) {
-    console.log(error);
-    return res.status(400).end();
+    console.error("Error:", error);
+    return res.status(500).json({ error: "Internal server error" });
   }
 }
-
