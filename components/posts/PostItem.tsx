@@ -15,6 +15,9 @@ import {
     HoverCardContent,
     HoverCardTrigger,
   } from "@/components/ui/hover-card";
+import Like from "@/fonts/like";
+import Dislike from "@/fonts/dislike";
+import Comment from "@/fonts/comment";
 
 interface PostItemProps {
     data: Record<string, any>;
@@ -136,8 +139,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                         "
                         >
                             <div className="like-icon-circle h-7 w-10 flex items-center justify-center rounded-full  bg-gradient-to-br from-customGreen to-customGold">
-                                <LikeIcon size={20} color={hasLiked ? 'white' : ''} />
-                            </div>
+                            <Like size={20} liked={hasLiked} />                            </div>
                             <p>{data.likedIds.length}</p>
                         </div>
                         <div
@@ -155,7 +157,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                         "
                         >
                             <div className="dislike-icon-circle h-7 w-10 flex items-center justify-center rounded-full bg-neutral-800">
-                                <DislikeIcon size={20} />
+                            <Dislike size={20} disliked={hasDisliked} /> 
                             </div>
                             <p>{data.dislikedIds?.length}</p>
                         </div>
@@ -173,7 +175,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                         "
                         >
                             <div className="comment-icon-circle h-7 w-10 flex items-center justify-center rounded-full bg-neutral-800">
-                                <LuMessageCircle size={20} />
+                                <Comment size={20} />
                             </div>
                             <div>{data.comments?.length || 0}</div>
                             

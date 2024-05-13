@@ -2,8 +2,9 @@ import { JSXElementConstructor, ReactElement } from 'react';
 import { IconType } from 'react-icons';
 import { BsDot } from 'react-icons/bs';
 import { useRouter } from 'next/router';
-import  useCurrentUser  from '@/hooks/useCurrentUser';
-import  useLoginModal  from '@/hooks/useLoginModal';
+import useCurrentUser from '@/hooks/useCurrentUser';
+import useLoginModal from '@/hooks/useLoginModal';
+import { motion } from 'framer-motion'; 
 
 interface SidebarItemProps {
     label: string;
@@ -25,7 +26,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     const LoginModal = useLoginModal();
     const { data: currentUser } = useCurrentUser();
     const router = useRouter();
-    
+
     const handleClick = () => {
         if (onClick) {
             onClick();
@@ -40,7 +41,11 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     };
 
     return (
-        <div onClick={handleClick} className='flex flex-row items-center'>
+        <motion.div 
+            onClick={handleClick}
+            className='flex flex-row items-center'
+            whileHover={{ x: 5 }} // Move 5 pixels to the right on hover
+        >
             <div className="
                 relative
                 rounded-full
@@ -56,7 +61,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                 lg:hidden
             ">
                 {typeof icon === 'function' ? icon({ size: 28, color: 'white' }) : icon}
-                {alert ? <BsDot className="text-white absolute -top-4 left-0" size={70}/> : null}
+                {alert ? <BsDot className="text-white absolute -top-4 left-0" size={70} /> : null}
             </div>
             <div className="
                 relative
@@ -65,8 +70,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                 items-center
                 gap-4
                 p-3
-                rounded-full
-                hover:bg-white-300
+                rounded-xl
+                transition
+                hover:bg-white
                 hover:bg-opacity-10
                 cursor-pointer
             ">
@@ -74,9 +80,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                 <p className="hidden lg:block text-white text-xl">
                     {label}
                 </p>
-                {alert ? <BsDot className="text-white absolute -top-4 left-0" size={70}/> : null}
+                {alert ? <BsDot className="text-white absolute -top-4 left-0" size={70} /> : null}
             </div>
-        </div>
+        </motion.div> // Close motion.div
     );
 }
 

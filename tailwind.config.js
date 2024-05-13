@@ -11,6 +11,7 @@ module.exports = {
         customGreen: '#2F3732',
         customGold: '#323327',
         customBg: "0D0D0D",
+        customLike: '#1B1B1B'
       },
       fontFamily: {
         primary:'Geist Variable',

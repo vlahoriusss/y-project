@@ -6,6 +6,7 @@ interface ButtonProps {
     onClick: () => void;
     disabled?: boolean;
     outline?: boolean;
+    className?: string;
   }
   
   const Button: React.FC<ButtonProps> = ({ 
@@ -40,6 +41,7 @@ interface ButtonProps {
           ${outline ? 'border-white' : ''}
           ${outline ? 'text-black' : ''}
         `}
+        bg-gradient-to-br from-customGreen to-customGold
       >
         {label}
       </button>
