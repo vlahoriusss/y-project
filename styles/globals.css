@@ -11,11 +11,12 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  },
+  }
   @font-face {
     font-family: 'Agrandir';
-    src: url(Agrandir-Regular.otf) format('truetype');
-  },
+    src: url('Agrandir-Regular.otf') format('truetype');
+    font-style: normal;
+  }
   @font-face {
     font-family: 'yicons';
     src: url('yicons.ttf');
