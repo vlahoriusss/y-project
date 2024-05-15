@@ -1,4 +1,4 @@
-import React, { JSXElementConstructor, ReactElement, SVGProps } from 'react';
+import React, { JSXElementConstructor, ReactElement, SVGProps, FunctionComponent } from 'react';
 import { IconType } from 'react-icons';
 import { BsDot } from 'react-icons/bs';
 import { useRouter } from 'next/router';
@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 interface SidebarItemProps {
     label: string;
     href?: string;
-    icon: ReactElement<any, string | JSXElementConstructor<any>> | IconType | ReactElement<SVGProps<SVGSVGElement>>;
+    icon: ReactElement<any, string | JSXElementConstructor<any>> | IconType | FunctionComponent<any>;
     onClick?: () => void;
     auth?: boolean;
     alert?: boolean;
@@ -61,11 +61,10 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                 lg:hidden
             ">
                 {React.isValidElement(icon) ? (
-                    React.cloneElement(icon as ReactElement<SVGProps<SVGSVGElement>>, {
-                        width: 28,
-                        height: 28,
-                        fill: 'white',
-                        className: "icon-svg" 
+                    React.cloneElement(icon as ReactElement<any, string | JSXElementConstructor<any>>, {
+                        size: 28,
+                        color: 'white',
+                        className: "icon-svg" // Adding a className for styling
                     })
                 ) : (
                     typeof icon === 'function' ? icon({ size: 28, color: 'white' }) : icon
@@ -86,10 +85,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                 cursor-pointer
             ">
                 {React.isValidElement(icon) ? (
-                    React.cloneElement(icon as ReactElement<SVGProps<SVGSVGElement>>, {
-                        width: 24,
-                        height: 24,
-                        fill: 'red', // Correcting color to red
+                    React.cloneElement(icon as ReactElement<any, string | JSXElementConstructor<any>>, {
+                        size: 24,
+                        color: 'red', // Correcting color to red
                         className: "icon-svg" // Adding a className for styling
                     })
                 ) : (
