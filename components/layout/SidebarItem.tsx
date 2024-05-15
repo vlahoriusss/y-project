@@ -1,4 +1,4 @@
-import { JSXElementConstructor, ReactElement } from 'react';
+import React, { JSXElementConstructor, ReactElement, SVGProps } from 'react';
 import { IconType } from 'react-icons';
 import { BsDot } from 'react-icons/bs';
 import { useRouter } from 'next/router';
@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 interface SidebarItemProps {
     label: string;
     href?: string;
-    icon: ReactElement<any, string | JSXElementConstructor<any>> | IconType;
+    icon: ReactElement<any, string | JSXElementConstructor<any>> | IconType | ReactElement<SVGProps<SVGSVGElement>>;
     onClick?: () => void;
     auth?: boolean;
     alert?: boolean;
@@ -60,7 +60,16 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                 cursor-pointer
                 lg:hidden
             ">
-                {typeof icon === 'function' ? icon({ size: 28, color: 'white' }) : icon}
+                {React.isValidElement(icon) ? (
+                    React.cloneElement(icon as ReactElement<SVGProps<SVGSVGElement>>, {
+                        width: 28,
+                        height: 28,
+                        fill: 'white',
+                        className: "icon-svg" 
+                    })
+                ) : (
+                    typeof icon === 'function' ? icon({ size: 28, color: 'white' }) : icon
+                )}
                 {alert ? <BsDot className="text-white absolute -top-4 left-0" size={70} /> : null}
             </div>
             <div className="
@@ -76,7 +85,16 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                 hover:bg-opacity-10
                 cursor-pointer
             ">
-                {typeof icon === 'function' ? icon({ size: 24, color: 'white' }) : icon}
+                {React.isValidElement(icon) ? (
+                    React.cloneElement(icon as ReactElement<SVGProps<SVGSVGElement>>, {
+                        width: 24,
+                        height: 24,
+                        fill: 'red', // Correcting color to red
+                        className: "icon-svg" // Adding a className for styling
+                    })
+                ) : (
+                    typeof icon === 'function' ? icon({ size: 24, color: 'red' }) : icon
+                )}
                 <p className="hidden lg:block text-white text-xl">
                     {label}
                 </p>
