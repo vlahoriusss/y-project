@@ -93,7 +93,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                         className: "icon-svg" // Adding a className for styling
                     })
                 ) : (
-                    typeof icon === 'function' ? icon({ size: 24, color: 'red' }) : icon
+                    typeof icon === 'function' ? icon({ size: 24, color: 'white' }) : icon
                 )}
                 <p className="hidden lg:block text-white text-xl">
                     {label}
