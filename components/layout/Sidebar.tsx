@@ -69,7 +69,7 @@ const Sidebar = () => {
     return (
         <>
             {/* Mobile version */}
-            <div className="fixed bottom-20 right-4 z-50  md:hidden">
+            <div className="fixed bottom-20 right-4 z-10  md:hidden">
     <SidebarPostButton />
 </div>
 
