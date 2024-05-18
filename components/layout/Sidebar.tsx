@@ -69,7 +69,12 @@ const Sidebar = () => {
     return (
         <>
             {/* Mobile version */}
-            <div className='fixed bottom-0 left-0 right-0 bg-neutral-900 z-10 flex justify-around py-2 px-4 md:hidden'>
+            <div className="fixed bottom-20 right-4 z-50  md:hidden">
+    <SidebarPostButton />
+</div>
+
+
+            <div className='fixed bottom-2 left-2 right-2 bg-neutral-900 z-10 flex justify-around py-1 px-4 md:hidden rounded-full '>
                 {mobileItems.map((item) => (
                     <SidebarItem
                         key={item.href}

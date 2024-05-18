@@ -61,7 +61,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
   
 
   return (
-    <div className="px-5 py-2">
+    <div className="px-5 py-2 hidden md:block">
       {currentUser ? (
         <div className="flex flex-row items-start gap-4">
           <div>

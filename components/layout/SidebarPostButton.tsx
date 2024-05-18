@@ -44,13 +44,14 @@ const SidebarPostButton = () => {
                     mt-2
                     lg:hidden
                     rounded-full
-                    h-14
+                    h-13
                     w-14
                     p-2
                     flex
                     items-center
                     justify-center
-                    ${scrolled ? 'bg-white text-black' : 'bg-neutral-900 text-white'} 
+                    bg-white
+                    text-black
                     hover:bg-opacity-80
                     transition-colors duration-300
                     cursor-pointer
