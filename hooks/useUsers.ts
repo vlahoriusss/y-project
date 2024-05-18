@@ -2,7 +2,7 @@ import useSWR from "swr";
 
 import fetcher from '@/libs/fetcher'
 
-const useUsers = (p0: { orderBy: string; }) => {
+const useUsers = () => {
     const {
          data,
         error,
