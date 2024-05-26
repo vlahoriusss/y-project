@@ -118,7 +118,13 @@ const Modal: React.FC<ModalProps> = ({
                     </div>
                     {/* Body */}
                     <div
-                     className="realtive p-10 flex-auto">
+                     className="
+                        realtive
+                        pl-10
+                        pr-10
+                        flex-auto
+                     "
+                    >
                         {body}
                     </div>
                     {/* Footer */}
