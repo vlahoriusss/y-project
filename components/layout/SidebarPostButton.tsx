@@ -39,6 +39,8 @@ const SidebarPostButton = () => {
 
     return (
         <>
+         <motion.div
+           whileHover={{ y:5 }} >
             <div
                 className={`
                     mt-2
@@ -69,7 +71,7 @@ const SidebarPostButton = () => {
                     py-3
                     rounded-full
                     ${scrolled ? 'bg-white text-black' : 'bg-neutral-900 text-white'}
-                    hover:bg-opacity-90
+                    hover:bg-opacity-60
                     transition-colors duration-300
                     cursor-pointer
                 `}
@@ -84,6 +86,7 @@ const SidebarPostButton = () => {
                     New Yap
                 </p>
             </div>
+            </motion.div>
         </>
     );
 };

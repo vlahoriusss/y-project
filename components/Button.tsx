@@ -33,7 +33,7 @@ interface ButtonProps {
           ${fullWidth ? 'w-full' : 'w-fit'}
           ${secondary ? 'bg-white' : 'bg-white'}
           ${secondary ? 'text-black' : 'text-black'}
-          ${secondary ? 'border-black' : 'border-white'}
+          ${secondary ? 'border-white' : 'border-white'}
           ${large ? 'text-xl' : 'text-md'}
           ${large ? 'px-5' : 'px-4'}
           ${large ? 'py-3' : 'py-2'}
