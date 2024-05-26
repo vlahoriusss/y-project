@@ -48,7 +48,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
 
     return (
         <div className="border-b-[1px] border-neutral-800 pb-4">
-         <div className="flex justify-end p-2">
+         <div className="flex justify-end p-4">
             {currentUser?.id == userId ? (
              <Button secondary label="Settings" onClick={handleSettingsClick} />
             ) : (
@@ -61,7 +61,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
             )}
 
          </div>
-         <div className="mt-8 px-4">
+         <div className="mt-1 px-4">
             <div className="flex flex-col">
                 <p className="text-white text-2xl font-agrandir">
                     {fetchedUser?.name}

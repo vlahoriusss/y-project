@@ -84,10 +84,10 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
           border-b border-neutral-800
          "
         >
-            <div className="flex flex-row items-start gap-3 ">
+            <div className="flex flex-row items-start gap-3 w-full">
                 <Avatar userId={data.user.id} />
                 
-                <div>
+                <div className="w-full">
                     <div
                         className="
                      flex flex-row items-center gap-2
@@ -188,5 +188,4 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
 }
 
 export default PostItem;
-
 
