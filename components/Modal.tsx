@@ -58,6 +58,7 @@ const Modal: React.FC<ModalProps> = ({
          outline-none
          focus:outline-none
          drop-shadow-lg
+         bg-gray-600/40
          "
         >
             <div
