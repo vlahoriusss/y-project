@@ -26,9 +26,9 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
   return (
     <div
       className={`
-        ${hasBorder ? 'border-4 border-black' : ''}
-        ${isLarge ? 'h-32' : 'h-10'}
-        ${isLarge ? 'w-32' : 'w-10'}
+        ${hasBorder ? 'border-[6px] border-neutral-900' : ''}
+        ${isLarge ? 'h-24' : 'h-10'}
+        ${isLarge ? 'w-24' : 'w-10'}
         rounded-full 
         hover:opacity-90 
         transition 
